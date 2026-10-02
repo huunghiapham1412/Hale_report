@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Báo Cáo Tiến Độ Tốt Nghiệp | Thi Thu Ha Le</title>
+    <title>Báo Cáo Tiến Độ Tốt Nghiệp & Lộ Trình Transfer | Thi Thu Ha Le</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -15,6 +15,11 @@
             theme: {
                 extend: {
                     colors: {
+                        vt: {
+                            maroon: '#630031',
+                            orange: '#E5751F',
+                            light: '#FFF8F0'
+                        },
                         nvcc: {
                             green: '#005A36',
                             gold: '#FFC72C',
@@ -27,7 +32,7 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
@@ -37,6 +42,11 @@
         .tab-btn.active {
             border-bottom: 3px solid #005A36;
             color: #005A36;
+            font-weight: 700;
+        }
+        .tab-btn-vt.active {
+            border-bottom: 3px solid #E5751F !important;
+            color: #630031 !important;
             font-weight: 700;
         }
     </style>
@@ -51,8 +61,8 @@
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold tracking-wide">Báo Cáo Tiến Độ Học Tập & Tốt Nghiệp</h1>
-                    <p class="text-xs text-emerald-200">Northern Virginia Community College (NVCC) • Financial Aid Audit</p>
+                    <h1 class="text-xl font-bold tracking-wide">Báo Cáo Tiến Độ Học Tập & Transfer VT CS</h1>
+                    <p class="text-xs text-emerald-200">Northern Virginia Community College (NVCC) ➔ Virginia Tech (VT)</p>
                 </div>
             </div>
             <div class="flex items-center gap-3 text-sm bg-white/10 px-4 py-2 rounded-lg border border-white/10 backdrop-blur-sm">
@@ -93,10 +103,10 @@
                         <span class="text-[11px] text-emerald-600">Đã đạt điểm A/S</span>
                     </div>
 
-                    <div class="bg-sky-50/80 border border-sky-200 p-3.5 rounded-xl text-center">
-                        <span class="text-xs font-medium text-sky-800 uppercase tracking-wider block">Đang Học (Fall 2026)</span>
-                        <div class="text-2xl font-black text-sky-700 mt-1">8 <span class="text-xs text-slate-500">CR</span></div>
-                        <span class="text-[11px] text-sky-600">CHM 111 & MTH 265</span>
+                    <div class="bg-vt-light border border-orange-200 p-3.5 rounded-xl text-center">
+                        <span class="text-xs font-medium text-vt-maroon uppercase tracking-wider block">Mục Tiêu Transfer</span>
+                        <div class="text-lg font-black text-vt-orange mt-1">Virginia Tech</div>
+                        <span class="text-[11px] font-bold text-vt-maroon bg-orange-100 px-2 py-0.5 rounded-full">BS Computer Science (Fall 2027)</span>
                     </div>
                 </div>
             </div>
@@ -142,7 +152,7 @@
                         <i class="fa-solid fa-list-check text-rose-500"></i> Các môn còn thiếu để ra trường:
                     </div>
                     <ul class="space-y-1 pl-4 list-disc text-slate-600">
-                        <li><strong>Physical/Life Science w/ Lab #2:</strong> 4 tín chỉ (ví dụ: CHM 112, PHY 241, BIO 101, GOL 105)</li>
+                        <li><strong>Physical/Life Science w/ Lab #2:</strong> 4 tín chỉ (ví dụ: CHM 112, PHY 241, BIO 101)</li>
                         <li><strong>General Education Elective:</strong> 3 tín chỉ (môn tự chọn giáo dục đại cương)</li>
                     </ul>
                 </div>
@@ -187,46 +197,33 @@
                     </div>
                     <ul class="space-y-1 pl-4 list-disc text-slate-600">
                         <li><strong class="text-rose-700">CSC 223 (Data Structures & Algorithms):</strong> 4 tín chỉ (Bắt buộc)</li>
-                        <li><strong>Science Elective #2 w/ Lab:</strong> 4 tín chỉ (ví dụ: CHM 112, PHY 241, BIO 101)</li>
+                        <li><strong>Science Elective #2 w/ Lab:</strong> 4 tín chỉ (ví dụ: CHM 112, PHY 241)</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Optimal Strategy Alert Banner -->
+        <!-- Strategy Alert Banner -->
         <div class="bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-teal-500/10 border border-amber-300/60 rounded-2xl p-5 mb-8 shadow-sm">
             <div class="flex items-start gap-4">
                 <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 text-lg shadow-sm">
                     <i class="fa-solid fa-lightbulb"></i>
                 </div>
                 <div>
-                    <h4 class="text-base font-bold text-slate-900"> Chiến Lược Lựa Chọn Môn Tốt Nhất Để Ra Trường Cùng Lúc 2 Bằng (Dual Degree Roadmap)</h4>
+                    <h4 class="text-base font-bold text-slate-900">Chiến Lược Tối Ưu: Lấy 2 Bằng NVCC & Chuyển Tiếp Trực Tiếp Virginia Tech (Fall 2027)</h4>
                     <p class="text-sm text-slate-700 mt-1 leading-relaxed">
-                        Bạn hiện chỉ cần học đúng <strong class="text-amber-900 underline">2 môn chính (8 Tín chỉ)</strong> là có thể đáp ứng điều kiện tốt nghiệp cho <strong>cả 2 chuyên ngành</strong>:
+                        Chỉ cần học thêm <strong class="text-amber-900 underline">2 môn chính (8 Tín chỉ)</strong> trong học kỳ Spring 2027 (`CSC 223` & `CHM 112`), bạn sẽ vừa <strong>tốt nghiệp kép 2 bằng A.S. tại NVCC</strong>, vừa đáp ứng <strong>100% điều kiện chuyển tiếp bảo đảm (GAA)</strong> vào ngành B.S. Computer Science tại Virginia Tech!
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
-                        <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-xs flex items-center space-x-3">
-                            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">1</span>
-                            <div>
-                                <span class="font-bold text-slate-900 text-xs block">Môn 1: CHM 112 (General Chemistry II) hoặc PHY 241</span>
-                                <span class="text-[11px] text-slate-500">4 Tín chỉ • Hoàn thành yêu cầu Science #2 cho CẢ HAI Major!</span>
-                            </div>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-xs flex items-center space-x-3">
-                            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">2</span>
-                            <div>
-                                <span class="font-bold text-slate-900 text-xs block">Môn 2: CSC 223 (Data Structures & Algorithms)</span>
-                                <span class="text-[11px] text-slate-500">4 Tín chỉ • Hoàn thành môn CSC bắt buộc cho Computer Science & Gen Ed cho Math!</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Tabs Bar -->
-        <div class="flex border-b border-slate-200 mb-6 bg-white rounded-t-xl px-4 pt-2 overflow-x-auto">
-            <button onclick="switchTab('tab-science')" id="btn-tab-science" class="tab-btn active px-5 py-3 text-sm font-medium transition flex items-center gap-2 whitespace-nowrap">
+        <div class="flex border-b border-slate-200 mb-6 bg-white rounded-t-xl px-4 pt-2 overflow-x-auto shadow-xs">
+            <button onclick="switchTab('tab-vt')" id="btn-tab-vt" class="tab-btn tab-btn-vt active px-5 py-3 text-sm font-medium transition flex items-center gap-2 whitespace-nowrap">
+                <i class="fa-solid fa-building-columns text-vt-orange"></i> 🎓 Lộ Trình Virginia Tech CS (Fall 2027)
+            </button>
+            <button onclick="switchTab('tab-science')" id="btn-tab-science" class="tab-btn px-5 py-3 text-sm font-medium transition flex items-center gap-2 text-slate-500 whitespace-nowrap">
                 <i class="fa-solid fa-calculator text-emerald-600"></i> Science / Mathematics (880-02)
             </button>
             <button onclick="switchTab('tab-cs')" id="btn-tab-cs" class="tab-btn px-5 py-3 text-sm font-medium transition flex items-center gap-2 text-slate-500 whitespace-nowrap">
@@ -240,8 +237,225 @@
             </button>
         </div>
 
+        <!-- TAB VT: Virginia Tech Transfer Guide -->
+        <div id="tab-vt" class="tab-content">
+            <!-- VT Header Card -->
+            <div class="bg-gradient-to-r from-vt-maroon to-slate-900 text-white rounded-2xl p-6 shadow-md mb-6 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl font-black text-white pointer-events-none">
+                    VT
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
+                    <div>
+                        <span class="bg-vt-orange text-white text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                            Guaranteed Admission Agreement (GAA) Eligible
+                        </span>
+                        <h3 class="text-2xl font-black mt-2">B.S. in Computer Science — Virginia Tech</h3>
+                        <p class="text-xs text-orange-200 mt-1">College of Engineering • Blacksburg, VA • Chuyển tiếp mùa Fall 2027</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 text-center shrink-0">
+                        <span class="text-xs text-orange-200 uppercase font-semibold block">Vị thế hồ sơ</span>
+                        <span class="text-xl font-bold text-amber-300"><i class="fa-solid fa-star text-amber-400 mr-1"></i> Top Tier Applicant</span>
+                        <p class="text-[11px] text-slate-200 mt-0.5">GPA: 4.00 / 4.00 (Ngưỡng GAA: 3.20)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GAA Assessment & Requirements Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <!-- Card 1: GPA -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-slate-500 uppercase">1. Yêu Cầu GPA</span>
+                        <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-slate-900">4.00 <span class="text-xs font-normal text-slate-500">/ 4.00</span></div>
+                    <p class="text-xs text-emerald-600 font-medium mt-1">✓ Đạt vượt ngưỡng GAA tối thiểu (3.20 - 3.40)</p>
+                </div>
+
+                <!-- Card 2: Degree -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-slate-500 uppercase">2. Bằng Cấp NVCC</span>
+                        <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                    </div>
+                    <div class="text-lg font-bold text-slate-900">Dual A.S. Degree</div>
+                    <p class="text-xs text-emerald-600 font-medium mt-1">✓ Hoàn thành A.S. CS & Science/Math (Spring 2027)</p>
+                </div>
+
+                <!-- Card 3: Grade in Required Courses -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-slate-500 uppercase">3. Điểm Môn Bắt Buộc</span>
+                        <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-slate-900">100% Điểm A</div>
+                    <p class="text-xs text-emerald-600 font-medium mt-1">✓ Đạt điểm A tuyệt đối (VT yêu cầu từ điểm C trở lên)</p>
+                </div>
+            </div>
+
+            <!-- VT Course Mapping Table -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
+                <div class="border-b border-slate-100 pb-4 mb-4">
+                    <h4 class="text-base font-bold text-slate-900">📊 Bảng Đối Chiếu Điều Kiện Môn Học Với Virginia Tech (VT Transfer Roadmap)</h4>
+                    <p class="text-xs text-slate-500">Chi tiết đối chiếu các môn NVCC với mã môn tương đương tại Virginia Tech</p>
+                </div>
+
+                <!-- Category A: Required Courses -->
+                <div class="mb-6">
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-vt-maroon bg-orange-100/80 px-3 py-1.5 rounded-lg inline-block mb-3">
+                        A. Nhóm Môn Bắt Buộc Xét Tuyển Chuyển Tiếp (Required Courses)
+                    </h5>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 text-slate-700 uppercase border-b border-slate-200 text-[10px]">
+                                    <th class="p-3">Môn tương đương VT</th>
+                                    <th class="p-3">Mã môn NVCC</th>
+                                    <th class="p-3">Trạng thái</th>
+                                    <th class="p-3">Kết quả</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-slate-50/80">
+                                    <td class="p-3 font-bold text-slate-900">MATH 1225 <span class="font-normal text-slate-500">(Calculus I)</span></td>
+                                    <td class="p-3 font-mono">MTH 263 - Calculus I</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">✅ Hoàn thành</span></td>
+                                    <td class="p-3 font-bold text-emerald-700">Điểm A</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/80">
+                                    <td class="p-3 font-bold text-slate-900">MATH 1226 <span class="font-normal text-slate-500">(Calculus II)</span></td>
+                                    <td class="p-3 font-mono">MTH 264 - Calculus II</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">✅ Hoàn thành</span></td>
+                                    <td class="p-3 font-bold text-emerald-700">Điểm A</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/80">
+                                    <td class="p-3 font-bold text-slate-900">ENGL 1105 & 1106 <span class="font-normal text-slate-500">(Composition I & II)</span></td>
+                                    <td class="p-3 font-mono">ENG 111 & ENG 112</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">✅ Hoàn thành</span></td>
+                                    <td class="p-3 font-bold text-emerald-700">Điểm A / A</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/80">
+                                    <td class="p-3 font-bold text-slate-900">CS 1114 <span class="font-normal text-slate-500">(Intro to Software Design)</span></td>
+                                    <td class="p-3 font-mono">CSC 222 - Object Oriented Prog.</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">✅ Hoàn thành</span></td>
+                                    <td class="p-3 font-bold text-emerald-700">Điểm A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Category B: Strongly Recommended -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-700 bg-slate-100 px-3 py-1.5 rounded-lg inline-block mb-3">
+                        B. Nhóm Môn Khuyên Dùng & Cần Thiết Cho Năm 3 VT (Strongly Recommended)
+                    </h5>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 text-slate-700 uppercase border-b border-slate-200 text-[10px]">
+                                    <th class="p-3">Môn tương đương VT</th>
+                                    <th class="p-3">Mã môn NVCC</th>
+                                    <th class="p-3">Trạng thái</th>
+                                    <th class="p-3">Ghi chú & Khuyên dùng</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-slate-50/80 bg-amber-50/30">
+                                    <td class="p-3 font-bold text-slate-900">CS 2114 <span class="font-normal text-slate-500">(Data Structures)</span></td>
+                                    <td class="p-3 font-mono">CSC 223</td>
+                                    <td class="p-3"><span class="bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded">⏳ Đăng ký Spring 2027</span></td>
+                                    <td class="p-3 text-slate-600">Môn tiên quyết quan trọng nhất để lên đúng tiến độ năm 3 tại VT.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/80">
+                                    <td class="p-3 font-bold text-slate-900">MATH 2204 <span class="font-normal text-slate-500">(Calculus III)</span></td>
+                                    <td class="p-3 font-mono">MTH 265</td>
+                                    <td class="p-3"><span class="bg-sky-100 text-sky-800 font-semibold px-2 py-0.5 rounded">⏳ Đang học Fall 2026</span></td>
+                                    <td class="p-3 text-slate-600">Đang học trong kỳ hiện tại.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/80">
+                                    <td class="p-3 font-bold text-slate-900">MATH 2114 <span class="font-normal text-slate-500">(Linear Algebra)</span></td>
+                                    <td class="p-3 font-mono">MTH 266</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">✅ Hoàn thành</span></td>
+                                    <td class="p-3 font-bold text-emerald-700">Điểm A (Summer 2026)</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/80">
+                                    <td class="p-3 font-bold text-slate-900">MATH 2534 <span class="font-normal text-slate-500">(Discrete Math)</span></td>
+                                    <td class="p-3 font-mono">MTH 288</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">✅ Hoàn thành</span></td>
+                                    <td class="p-3 font-bold text-emerald-700">Điểm A (Spring 2026)</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/80">
+                                    <td class="p-3 font-bold text-slate-900">Natural Science Seq. #1 <span class="font-normal text-slate-500">(4 CR)</span></td>
+                                    <td class="p-3 font-mono">CHM 111</td>
+                                    <td class="p-3"><span class="bg-sky-100 text-sky-800 font-semibold px-2 py-0.5 rounded">⏳ Đang học Fall 2026</span></td>
+                                    <td class="p-3 text-slate-600">Hoàn thành nửa đầu chuỗi Khoa học Tự nhiên.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/80 bg-amber-50/30">
+                                    <td class="p-3 font-bold text-slate-900">Natural Science Seq. #2 <span class="font-normal text-slate-500">(4 CR)</span></td>
+                                    <td class="p-3 font-mono">CHM 112 <span class="text-slate-500">(hoặc PHY 241)</span></td>
+                                    <td class="p-3"><span class="bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded">⏳ Đăng ký Spring 2027</span></td>
+                                    <td class="p-3 text-slate-600">Hoàn thành chuỗi 8 tín chỉ Science Lab cho Virginia Tech.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline & Important Deadlines -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+                <div class="border-b border-slate-100 pb-4 mb-6">
+                    <h4 class="text-base font-bold text-slate-900">📅 Các Mốc Thời Gian Quan Trọng Cho Chuyển Tiếp Fall 2027</h4>
+                    <p class="text-xs text-slate-500">Lịch trình nộp đơn và chuẩn bị nhập học vào Virginia Tech</p>
+                </div>
+
+                <div class="relative pl-6 border-l-2 border-vt-orange/30 space-y-6">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-vt-orange border-4 border-white shadow-xs"></div>
+                        <span class="text-xs font-bold text-vt-maroon bg-orange-100 px-2.5 py-0.5 rounded-full">Tháng 12/2026 – Tháng 1/2027</span>
+                        <h5 class="text-sm font-bold text-slate-900 mt-1">Chuẩn bị hồ sơ nộp đơn</h5>
+                        <p class="text-xs text-slate-600 mt-0.5">Tạo tài khoản và điền thông tin trên Virginia Tech Transfer Application / Common App Transfer.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-rose-600 border-4 border-white shadow-xs"></div>
+                        <span class="text-xs font-bold text-white bg-rose-600 px-2.5 py-0.5 rounded-full">1 Tháng 3, 2027 (DEADLINE HÀNG ĐẦU)</span>
+                        <h5 class="text-sm font-bold text-slate-900 mt-1">Hạn chót nộp đơn Priority Application & Financial Aid</h5>
+                        <p class="text-xs text-slate-600 mt-0.5">Nộp đơn chuyển tiếp chính thức cùng bảng điểm NVCC hiện tại. Nộp FAFSA mã trường VT: <strong class="font-mono text-slate-800">003754</strong>.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow-xs"></div>
+                        <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full">Tháng 4 – Tháng 5, 2027</span>
+                        <h5 class="text-sm font-bold text-slate-900 mt-1">Nhận kết quả trúng tuyển</h5>
+                        <p class="text-xs text-slate-600 mt-0.5">Nhận thư báo trúng tuyển chính thức từ Virginia Tech College of Engineering.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow-xs"></div>
+                        <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">Tháng 5, 2027</span>
+                        <h5 class="text-sm font-bold text-slate-900 mt-1">Tốt nghiệp NVCC & Gửi bảng điểm chính thức</h5>
+                        <p class="text-xs text-slate-600 mt-0.5">Hoàn thành học kỳ Spring 2027, nhận 2 bằng A.S. từ NVCC và gửi Final Official Transcript cho VT.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-vt-maroon border-4 border-white shadow-xs"></div>
+                        <span class="text-xs font-bold text-vt-maroon bg-orange-100 px-2.5 py-0.5 rounded-full">Tháng 8, 2027</span>
+                        <h5 class="text-sm font-bold text-slate-900 mt-1">Nhập học chính thức tại Virginia Tech</h5>
+                        <p class="text-xs text-slate-600 mt-0.5">Tham gia Orientation và bắt đầu học kỳ Fall 2027 tại campus Blacksburg, VA!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- TAB 1: Science / Mathematics Detail -->
-        <div id="tab-science" class="tab-content">
+        <div id="tab-science" class="tab-content hidden">
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
                 <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 border-b border-slate-100 pb-4 mb-6">
                     <div>
@@ -382,7 +596,7 @@
                                     <div>
                                         <span class="font-bold text-rose-900 text-sm">Science Elective #2 (CẦN LẤY)</span>
                                         <p class="text-rose-700 mt-0.5">Yêu cầu: 4.0 CR • Chưa hoàn thành</p>
-                                        <p class="text-slate-500 text-[11px] mt-1">Các môn hợp lệ: CHM 112, PHY 241, PHY 242, BIO 101, BIO 102, GOL 105, GOL 106</p>
+                                        <p class="text-slate-500 text-[11px] mt-1">Các môn hợp lệ: CHM 112, PHY 241, PHY 242, BIO 101, BIO 102</p>
                                     </div>
                                 </div>
                                 <span class="bg-rose-600 text-white font-bold px-3 py-1.5 rounded text-xs shadow-xs">
@@ -546,7 +760,7 @@
                                     <div>
                                         <span class="font-bold text-rose-900 text-sm">Science Elective #2 (CẦN LẤY)</span>
                                         <p class="text-rose-700 mt-0.5">Yêu cầu: 4.0 CR • Tổng Science cần 8 CR</p>
-                                        <p class="text-slate-500 text-[11px]">Danh sách gợi ý: CHM 112, PHY 241, PHY 242, BIO 101, BIO 102, GOL 105</p>
+                                        <p class="text-slate-500 text-[11px]">Danh sách gợi ý: CHM 112, PHY 241, PHY 242, BIO 101, BIO 102</p>
                                     </div>
                                 </div>
                                 <span class="bg-rose-600 text-white font-bold px-3 py-1.5 rounded text-xs shadow-xs">
@@ -590,8 +804,8 @@
         <div id="tab-planner" class="tab-content hidden">
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
                 <div class="border-b border-slate-100 pb-4 mb-6">
-                    <h3 class="text-lg font-bold text-slate-900"> Công Cụ Mô Phỏng Đăng Ký Môn Để Tốt Nghiệp</h3>
-                    <p class="text-xs text-slate-500">Tích chọn các môn bạn dự định đăng ký kỳ tiếp theo để xem tiến độ tự động nhảy lên 100%!</p>
+                    <h3 class="text-lg font-bold text-slate-900">Công Cụ Mô Phỏng Đăng Ký Môn Để Tốt Nghiệp & Transfer</h3>
+                    <p class="text-xs text-slate-500">Tích chọn các môn bạn dự định đăng ký kỳ Spring 2027 để xem tiến độ nhảy lên 100%!</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -603,8 +817,8 @@
                             <input type="checkbox" id="chk-csc223" onchange="updateSimulation()" class="w-5 h-5 mt-1 text-emerald-600 rounded focus:ring-emerald-500">
                             <div class="ml-3">
                                 <span class="font-bold text-slate-900 text-sm block">CSC 223 - Data Structures and Analysis of Algorithms</span>
-                                <p class="text-xs text-slate-600 mt-0.5">4 Tín chỉ • <strong>Đáp ứng:</strong> Môn bắt buộc ngành Computer Science + Tính làm Gen Ed Elective cho Math!</p>
-                                <span class="inline-block mt-1 text-[10px] font-bold bg-blue-100 text-blue-800 px-2 py-0.5 rounded">Khuyên dùng 100%</span>
+                                <p class="text-xs text-slate-600 mt-0.5">4 Tín chỉ • <strong>Đáp ứng:</strong> Môn bắt buộc CS tại NVCC + Miễn môn CS 2114 tại Virginia Tech!</p>
+                                <span class="inline-block mt-1 text-[10px] font-bold bg-blue-100 text-blue-800 px-2 py-0.5 rounded">Bắt buộc cho VT CS</span>
                             </div>
                         </label>
 
@@ -612,14 +826,14 @@
                             <input type="checkbox" id="chk-chm112" onchange="updateSimulation()" class="w-5 h-5 mt-1 text-emerald-600 rounded focus:ring-emerald-500">
                             <div class="ml-3">
                                 <span class="font-bold text-slate-900 text-sm block">CHM 112 - General Chemistry II (hoặc PHY 241)</span>
-                                <p class="text-xs text-slate-600 mt-0.5">4 Tín chỉ • <strong>Đáp ứng:</strong> Môn Science Lab thứ 2 cho CẢ HAI ngành Science/Math & Computer Science!</p>
-                                <span class="inline-block mt-1 text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Khuyên dùng 100%</span>
+                                <p class="text-xs text-slate-600 mt-0.5">4 Tín chỉ • <strong>Đáp ứng:</strong> Môn Science Lab thứ 2 cho cả 2 bằng A.S. & Đủ chuỗi Science cho VT Engineering!</p>
+                                <span class="inline-block mt-1 text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Bắt buộc cho VT CS</span>
                             </div>
                         </label>
 
                         <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800">
                             <i class="fa-solid fa-circle-info text-emerald-600 mr-1.5"></i>
-                            <strong>Mẹo tiết kiệm học phí & thời gian:</strong> Việc chọn đúng 2 môn trên giúp bạn học ít hơn 1 môn so với học riêng lẻ, và ra trường cùng lúc với <strong>2 Bằng Bằng Bằng Tốt Nghiệp A.S.</strong>!
+                            <strong>Mẹo tiết kiệm học phí & thời gian:</strong> Chọn đúng 2 môn trên giúp bạn học ít hơn 1 môn so với học riêng lẻ, vừa nhận <strong>2 Bằng Tốt Nghiệp A.S.</strong> vừa sẵn sàng bước thẳng vào năm 3 Virginia Tech!
                         </div>
                     </div>
 
@@ -627,7 +841,7 @@
                     <div class="bg-slate-900 text-white p-6 rounded-2xl flex flex-col justify-between shadow-lg">
                         <div>
                             <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">Kết Quả Mô Phỏng</span>
-                            <h4 class="text-lg font-bold">Dự Báo Tốt Nghiệp</h4>
+                            <h4 class="text-lg font-bold">Dự Báo Tốt Nghiệp & Transfer</h4>
                             <p class="text-xs text-slate-400 mt-1">Dựa trên lựa chọn môn ở cột bên trái</p>
 
                             <div class="mt-6 space-y-4">
@@ -660,8 +874,8 @@
                         <div id="sim-congratulations" class="mt-6 pt-4 border-t border-slate-800 hidden">
                             <div class="bg-emerald-500/20 border border-emerald-500/50 p-3 rounded-xl text-center">
                                 <i class="fa-solid fa-trophy text-amber-300 text-xl mb-1"></i>
-                                <p class="text-xs font-bold text-emerald-300">ĐỦ ĐIỀU KIỆN TỐT NGHIỆP CẢ 2 BẰNG!</p>
-                                <p class="text-[10px] text-slate-300 mt-0.5">Dự kiến nhận 2 bằng A.S. vào Spring 2027</p>
+                                <p class="text-xs font-bold text-emerald-300">SẴN SÀNG TRANSFER VIRGINIA TECH!</p>
+                                <p class="text-[10px] text-slate-300 mt-0.5">Tốt nghiệp 2 bằng A.S. & Nhập học Fall 2027</p>
                             </div>
                         </div>
                     </div>
@@ -709,33 +923,33 @@
     <script>
         // Full Course Dataset extracted from NVCC Audit Transcript
         const courseHistory = [
-            { term: '2024 Spring', code: 'ESL 31', name: 'Composition I', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
-            { term: '2024 Spring', code: 'ESL 32', name: 'Reading I', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
-            { term: '2024 Spring', code: 'ESL 33', name: 'Oral Communications I', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
-            { term: '2024 Fall', code: 'CST 100', name: 'Prin of Public Speaking', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2024 Fall', code: 'SDV 100', name: 'College Success Skills', credits: 1.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2024 Fall', code: 'ESL 41', name: 'Composition II', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
-            { term: '2024 Fall', code: 'ESL 42', name: 'Reading II', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
-            { term: '2025 Spring', code: 'ESL 51', name: 'Composition III', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
-            { term: '2025 Spring', code: 'ESL 52', name: 'Reading III', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
-            { term: '2025 Spring', code: 'MTH 263', name: 'Calculus I', credits: 4.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2025 Spring', code: 'ITE 152', name: 'Intro to Digital and Info', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2025 Summer', code: 'ENG 111', name: 'College Composition I', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2025 Summer', code: 'ESL 95', name: 'Topics In: ESL Advanced', credits: 3.0, grade: 'S', type: 'EN', status: 'Completed' },
-            { term: '2025 Summer', code: 'HIS 101', name: 'Western Civ Pre-1600 CE', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2025 Fall', code: 'CSC 221', name: 'Intro to Prob Solv and Progr', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2025 Fall', code: 'EGR 121', name: 'Foundations of Engineering', credits: 2.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2025 Fall', code: 'ART 100', name: 'Art Appreciation', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2025 Fall', code: 'HIS 102', name: 'Western Civ Post-1600 CE', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2026 Spring', code: 'CSC 222', name: 'Object Oriented Programming', credits: 4.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2026 Spring', code: 'MTH 288', name: 'Discrete Mathematics', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2026 Spring', code: 'MTH 264', name: 'Calculus II', credits: 4.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2026 Spring', code: 'REL 100', name: 'Intro to the Study of Religion', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2026 Summer', code: 'SOC 200', name: 'Introduction to Sociology', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2026 Summer', code: 'MTH 266', name: 'Linear Algebra', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2026 Summer', code: 'ENG 112', name: 'Coll Composition II', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
-            { term: '2026 Fall', code: 'CHM 111', name: 'General Chemistry I', credits: 4.0, grade: 'IP', type: 'IP', status: 'In Progress' },
-            { term: '2026 Fall', code: 'MTH 265', name: 'Calculus III', credits: 4.0, grade: 'IP', type: 'IP', status: 'In Progress' }
+            { term: '2024 Spring', code: 'ESL 31', name: 'Composition I', credits: 5.0, grade: 'S', status: 'Completed' },
+            { term: '2024 Spring', code: 'ESL 32', name: 'Reading I', credits: 5.0, grade: 'S', status: 'Completed' },
+            { term: '2024 Spring', code: 'ESL 33', name: 'Oral Communications I', credits: 5.0, grade: 'S', status: 'Completed' },
+            { term: '2024 Fall', code: 'CST 100', name: 'Prin of Public Speaking', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2024 Fall', code: 'SDV 100', name: 'College Success Skills', credits: 1.0, grade: 'A', status: 'Completed' },
+            { term: '2024 Fall', code: 'ESL 41', name: 'Composition II', credits: 5.0, grade: 'S', status: 'Completed' },
+            { term: '2024 Fall', code: 'ESL 42', name: 'Reading II', credits: 5.0, grade: 'S', status: 'Completed' },
+            { term: '2025 Spring', code: 'ESL 51', name: 'Composition III', credits: 5.0, grade: 'S', status: 'Completed' },
+            { term: '2025 Spring', code: 'ESL 52', name: 'Reading III', credits: 5.0, grade: 'S', status: 'Completed' },
+            { term: '2025 Spring', code: 'MTH 263', name: 'Calculus I', credits: 4.0, grade: 'A', status: 'Completed' },
+            { term: '2025 Spring', code: 'ITE 152', name: 'Intro to Digital and Info', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2025 Summer', code: 'ENG 111', name: 'College Composition I', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2025 Summer', code: 'ESL 95', name: 'Topics In: ESL Advanced', credits: 3.0, grade: 'S', status: 'Completed' },
+            { term: '2025 Summer', code: 'HIS 101', name: 'Western Civ Pre-1600 CE', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2025 Fall', code: 'CSC 221', name: 'Intro to Prob Solv and Progr', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2025 Fall', code: 'EGR 121', name: 'Foundations of Engineering', credits: 2.0, grade: 'A', status: 'Completed' },
+            { term: '2025 Fall', code: 'ART 100', name: 'Art Appreciation', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2025 Fall', code: 'HIS 102', name: 'Western Civ Post-1600 CE', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2026 Spring', code: 'CSC 222', name: 'Object Oriented Programming', credits: 4.0, grade: 'A', status: 'Completed' },
+            { term: '2026 Spring', code: 'MTH 288', name: 'Discrete Mathematics', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2026 Spring', code: 'MTH 264', name: 'Calculus II', credits: 4.0, grade: 'A', status: 'Completed' },
+            { term: '2026 Spring', code: 'REL 100', name: 'Intro to the Study of Religion', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2026 Summer', code: 'SOC 200', name: 'Introduction to Sociology', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2026 Summer', code: 'MTH 266', name: 'Linear Algebra', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2026 Summer', code: 'ENG 112', name: 'Coll Composition II', credits: 3.0, grade: 'A', status: 'Completed' },
+            { term: '2026 Fall', code: 'CHM 111', name: 'General Chemistry I', credits: 4.0, grade: 'IP', status: 'In Progress' },
+            { term: '2026 Fall', code: 'MTH 265', name: 'Calculus III', credits: 4.0, grade: 'IP', status: 'In Progress' }
         ];
 
         // Populate Table Function
@@ -778,14 +992,21 @@
         // Tab Switcher
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('tab-btn-vt');
+            });
 
             document.getElementById(tabId).classList.remove('hidden');
             
-            if(tabId === 'tab-science') document.getElementById('btn-tab-science').classList.add('active');
-            if(tabId === 'tab-cs') document.getElementById('btn-tab-cs').classList.add('active');
-            if(tabId === 'tab-planner') document.getElementById('btn-tab-planner').classList.add('active');
-            if(tabId === 'tab-history') document.getElementById('btn-tab-history').classList.add('active');
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            if (activeBtn) {
+                if (tabId === 'tab-vt') {
+                    activeBtn.classList.add('tab-btn-vt', 'active');
+                } else {
+                    activeBtn.classList.add('active');
+                }
+            }
         }
 
         // Interactive Planner Simulation
