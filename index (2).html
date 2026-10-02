@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Tiến Độ Tốt Nghiệp | Thi Thu Ha Le</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nvcc: {
+                            green: '#005A36',
+                            gold: '#FFC72C',
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .tab-btn.active {
+            border-bottom: 3px solid #005A36;
+            color: #005A36;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen pb-12">
+
+    <!-- Navigation Header -->
+    <header class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-amber-400 text-emerald-950 flex items-center justify-center font-bold text-xl shadow-md">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide">Báo Cáo Tiến Độ Học Tập & Tốt Nghiệp</h1>
+                    <p class="text-xs text-emerald-200">Northern Virginia Community College (NVCC) • Financial Aid Audit</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3 text-sm bg-white/10 px-4 py-2 rounded-lg border border-white/10 backdrop-blur-sm">
+                <i class="fa-solid fa-clock-rotate-left text-amber-300"></i>
+                <span>Cập nhật audit: <strong>10/01/2026</strong></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+
+        <!-- Student Information Card -->
+        <div class="glass-card rounded-2xl p-6 shadow-sm mb-8 border border-slate-200">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                <div class="flex items-center space-x-4 md:col-span-1 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0">
+                    <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-2xl border border-slate-300">
+                        TL
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900">Thi Thu Ha Le</h2>
+                        <p class="text-sm text-slate-500">Mã sinh viên: <span class="font-mono font-semibold text-slate-700">8183921</span></p>
+                        <span class="inline-block mt-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                            <i class="fa-solid fa-check-double mr-1"></i>ADVANCE Student
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:col-span-3 gap-4">
+                    <div class="bg-amber-50/80 border border-amber-200 p-3.5 rounded-xl text-center">
+                        <span class="text-xs font-medium text-amber-800 uppercase tracking-wider block">GPA Tích Lũy</span>
+                        <div class="text-2xl font-black text-amber-600 mt-1">4.00 <span class="text-xs font-normal text-slate-500">/ 4.00</span></div>
+                        <span class="text-[11px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">Summa Cum Laude</span>
+                    </div>
+
+                    <div class="bg-emerald-50/80 border border-emerald-200 p-3.5 rounded-xl text-center">
+                        <span class="text-xs font-medium text-emerald-800 uppercase tracking-wider block">Tín Chỉ Đã Hoàn Thành</span>
+                        <div class="text-2xl font-black text-emerald-700 mt-1">46 <span class="text-xs text-slate-500">CR</span></div>
+                        <span class="text-[11px] text-emerald-600">Đã đạt điểm A/S</span>
+                    </div>
+
+                    <div class="bg-sky-50/80 border border-sky-200 p-3.5 rounded-xl text-center">
+                        <span class="text-xs font-medium text-sky-800 uppercase tracking-wider block">Đang Học (Fall 2026)</span>
+                        <div class="text-2xl font-black text-sky-700 mt-1">8 <span class="text-xs text-slate-500">CR</span></div>
+                        <span class="text-[11px] text-sky-600">CHM 111 & MTH 265</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Summary Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- Major 1 Card -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 relative overflow-hidden transition hover:shadow-md">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-md uppercase tracking-wider">Major 1 • Code: 880-02</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Science / Mathematics (A.S.)</h3>
+                        <p class="text-xs text-slate-500">Chuyên ngành Khoa học Tự nhiên & Toán học</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-extrabold text-emerald-600">90%</div>
+                        <span class="text-xs font-medium text-slate-400">Tiến độ tổng thể</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs text-slate-600 mb-1 font-medium">
+                        <span>Đã tích lũy & Đang học: <strong>54 / 60 CR</strong></span>
+                        <span class="text-rose-600 font-bold">Còn thiếu: 6 CR</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3.5 rounded-full overflow-hidden flex p-0.5 border border-slate-200">
+                        <div class="bg-emerald-500 h-full rounded-l-full" style="width: 76.7%" title="Đã xong: 46 CR"></div>
+                        <div class="bg-sky-400 h-full" style="width: 13.3%" title="Đang học: 8 CR"></div>
+                        <div class="bg-slate-200 h-full rounded-r-full" style="width: 10%"></div>
+                    </div>
+                    <div class="flex justify-between text-[11px] text-slate-500 mt-1.5">
+                        <span class="flex items-center"><span class="w-2.5 h-2.5 bg-emerald-500 rounded-full inline-block mr-1"></span> Đã hoàn thành (46 CR)</span>
+                        <span class="flex items-center"><span class="w-2.5 h-2.5 bg-sky-400 rounded-full inline-block mr-1"></span> Đang học (8 CR)</span>
+                        <span class="flex items-center text-rose-600 font-semibold"><span class="w-2.5 h-2.5 bg-rose-400 rounded-full inline-block mr-1"></span> Cần lấy (6 CR)</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200 text-xs text-slate-700">
+                    <div class="font-bold text-slate-800 mb-1.5 flex items-center gap-1.5">
+                        <i class="fa-solid fa-list-check text-rose-500"></i> Các môn còn thiếu để ra trường:
+                    </div>
+                    <ul class="space-y-1 pl-4 list-disc text-slate-600">
+                        <li><strong>Physical/Life Science w/ Lab #2:</strong> 4 tín chỉ (ví dụ: CHM 112, PHY 241, BIO 101, GOL 105)</li>
+                        <li><strong>General Education Elective:</strong> 3 tín chỉ (môn tự chọn giáo dục đại cương)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Major 2 Card -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 relative overflow-hidden transition hover:shadow-md">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-md uppercase tracking-wider">Major 2 • Code: 2460</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Computer Science (A.S.)</h3>
+                        <p class="text-xs text-slate-500">Chuyên ngành Khoa học Máy tính</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-extrabold text-blue-600">88.3%</div>
+                        <span class="text-xs font-medium text-slate-400">Tiến độ tổng thể</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs text-slate-600 mb-1 font-medium">
+                        <span>Đã tích lũy & Đang học: <strong>53 / 60 CR</strong></span>
+                        <span class="text-rose-600 font-bold">Còn thiếu: 7 CR</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3.5 rounded-full overflow-hidden flex p-0.5 border border-slate-200">
+                        <div class="bg-blue-600 h-full rounded-l-full" style="width: 75%" title="Đã xong: 45 CR"></div>
+                        <div class="bg-sky-400 h-full" style="width: 13.3%" title="Đang học: 8 CR"></div>
+                        <div class="bg-slate-200 h-full rounded-r-full" style="width: 11.7%"></div>
+                    </div>
+                    <div class="flex justify-between text-[11px] text-slate-500 mt-1.5">
+                        <span class="flex items-center"><span class="w-2.5 h-2.5 bg-blue-600 rounded-full inline-block mr-1"></span> Đã hoàn thành (45 CR)</span>
+                        <span class="flex items-center"><span class="w-2.5 h-2.5 bg-sky-400 rounded-full inline-block mr-1"></span> Đang học (8 CR)</span>
+                        <span class="flex items-center text-rose-600 font-semibold"><span class="w-2.5 h-2.5 bg-rose-400 rounded-full inline-block mr-1"></span> Cần lấy (7 CR)</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200 text-xs text-slate-700">
+                    <div class="font-bold text-slate-800 mb-1.5 flex items-center gap-1.5">
+                        <i class="fa-solid fa-list-check text-rose-500"></i> Các môn còn thiếu để ra trường:
+                    </div>
+                    <ul class="space-y-1 pl-4 list-disc text-slate-600">
+                        <li><strong class="text-rose-700">CSC 223 (Data Structures & Algorithms):</strong> 4 tín chỉ (Bắt buộc)</li>
+                        <li><strong>Science Elective #2 w/ Lab:</strong> 4 tín chỉ (ví dụ: CHM 112, PHY 241, BIO 101)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optimal Strategy Alert Banner -->
+        <div class="bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-teal-500/10 border border-amber-300/60 rounded-2xl p-5 mb-8 shadow-sm">
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 text-lg shadow-sm">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                    <h4 class="text-base font-bold text-slate-900"> Chiến Lược Lựa Chọn Môn Tốt Nhất Để Ra Trường Cùng Lúc 2 Bằng (Dual Degree Roadmap)</h4>
+                    <p class="text-sm text-slate-700 mt-1 leading-relaxed">
+                        Bạn hiện chỉ cần học đúng <strong class="text-amber-900 underline">2 môn chính (8 Tín chỉ)</strong> là có thể đáp ứng điều kiện tốt nghiệp cho <strong>cả 2 chuyên ngành</strong>:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                        <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-xs flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">1</span>
+                            <div>
+                                <span class="font-bold text-slate-900 text-xs block">Môn 1: CHM 112 (General Chemistry II) hoặc PHY 241</span>
+                                <span class="text-[11px] text-slate-500">4 Tín chỉ • Hoàn thành yêu cầu Science #2 cho CẢ HAI Major!</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-xs flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">2</span>
+                            <div>
+                                <span class="font-bold text-slate-900 text-xs block">Môn 2: CSC 223 (Data Structures & Algorithms)</span>
+                                <span class="text-[11px] text-slate-500">4 Tín chỉ • Hoàn thành môn CSC bắt buộc cho Computer Science & Gen Ed cho Math!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs Bar -->
+        <div class="flex border-b border-slate-200 mb-6 bg-white rounded-t-xl px-4 pt-2 overflow-x-auto">
+            <button onclick="switchTab('tab-science')" id="btn-tab-science" class="tab-btn active px-5 py-3 text-sm font-medium transition flex items-center gap-2 whitespace-nowrap">
+                <i class="fa-solid fa-calculator text-emerald-600"></i> Science / Mathematics (880-02)
+            </button>
+            <button onclick="switchTab('tab-cs')" id="btn-tab-cs" class="tab-btn px-5 py-3 text-sm font-medium transition flex items-center gap-2 text-slate-500 whitespace-nowrap">
+                <i class="fa-solid fa-laptop-code text-blue-600"></i> Computer Science (2460)
+            </button>
+            <button onclick="switchTab('tab-planner')" id="btn-tab-planner" class="tab-btn px-5 py-3 text-sm font-medium transition flex items-center gap-2 text-slate-500 whitespace-nowrap">
+                <i class="fa-solid fa-sliders text-amber-600"></i> Mô Phỏng Đăng Ký Môn (Interactive Planner)
+            </button>
+            <button onclick="switchTab('tab-history')" id="btn-tab-history" class="tab-btn px-5 py-3 text-sm font-medium transition flex items-center gap-2 text-slate-500 whitespace-nowrap">
+                <i class="fa-solid fa-book text-indigo-600"></i> Lịch Sử Học Tập (Course History)
+            </button>
+        </div>
+
+        <!-- TAB 1: Science / Mathematics Detail -->
+        <div id="tab-science" class="tab-content">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
+                <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 border-b border-slate-100 pb-4 mb-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">Chi Tiết Audit: Science / Mathematics (A.S.)</h3>
+                        <p class="text-xs text-slate-500">Mã chương trình: 880-02 • Yêu cầu: 60 - 63 Tín chỉ • Hạn hoàn thành: Summer 2032</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-semibold border border-emerald-200">
+                            Đã đạt: 54 / 60 Tín chỉ
+                        </span>
+                        <span class="bg-rose-100 text-rose-800 text-xs px-3 py-1 rounded-full font-semibold border border-rose-200">
+                            Còn lại: 6 Tín chỉ
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Course Requirements Breakdown Table/Cards -->
+                <div class="space-y-4">
+
+                    <!-- Group 1: General Core -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="bg-slate-50 px-4 py-3 font-bold text-sm text-slate-800 flex justify-between items-center border-b border-slate-200">
+                            <span><i class="fa-solid fa-graduation-cap text-emerald-600 mr-2"></i> Môn Căn Bản & Kỹ Năng (Core Requirements)</span>
+                            <span class="text-xs font-normal text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">100% Hoàn thành</span>
+                        </div>
+                        <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                            <div class="flex items-center justify-between p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100">
+                                <div>
+                                    <span class="font-bold text-slate-900">SDV 100 - College Success Skills</span>
+                                    <p class="text-slate-500">Term: Fall 2024 • 1.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2.5 py-1 rounded text-xs">Điểm A</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100">
+                                <div>
+                                    <span class="font-bold text-slate-900">ENG 111 - College Composition I</span>
+                                    <p class="text-slate-500">Term: Summer 2025 • 3.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2.5 py-1 rounded text-xs">Điểm A</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100">
+                                <div>
+                                    <span class="font-bold text-slate-900">ENG 112 - College Composition II</span>
+                                    <p class="text-slate-500">Term: Summer 2026 • 3.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2.5 py-1 rounded text-xs">Điểm A</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100">
+                                <div>
+                                    <span class="font-bold text-slate-900">CST 100 - Prin of Public Speaking</span>
+                                    <p class="text-slate-500">Term: Fall 2024 • 3.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2.5 py-1 rounded text-xs">Điểm A</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group 2: Mathematics Core & Electives -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="bg-slate-50 px-4 py-3 font-bold text-sm text-slate-800 flex justify-between items-center border-b border-slate-200">
+                            <span><i class="fa-solid fa-square-root-variable text-emerald-600 mr-2"></i> Khối Toán Học (Mathematics Core & Electives)</span>
+                            <span class="text-xs font-normal text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">100% Hoàn thành</span>
+                        </div>
+                        <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+                            <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-slate-900">MTH 263 - Calculus I</span>
+                                    <p class="text-slate-500">Spring 2025 • 4.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2 py-0.5 rounded">Điểm A</span>
+                            </div>
+                            <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-slate-900">MTH 264 - Calculus II</span>
+                                    <p class="text-slate-500">Spring 2026 • 4.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2 py-0.5 rounded">Điểm A</span>
+                            </div>
+                            <div class="p-2.5 bg-sky-50 rounded-lg border border-sky-200 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-slate-900">MTH 265 - Calculus III</span>
+                                    <p class="text-slate-500">Fall 2026 • 4.0 CR</p>
+                                </div>
+                                <span class="bg-sky-500 text-white font-bold px-2 py-0.5 rounded">In Progress</span>
+                            </div>
+                            <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-slate-900">MTH 288 - Discrete Math</span>
+                                    <p class="text-slate-500">Spring 2026 • 3.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2 py-0.5 rounded">Điểm A</span>
+                            </div>
+                            <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-slate-900">CSC 221 - Intro to Programming</span>
+                                    <p class="text-slate-500">Fall 2025 • 3.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2 py-0.5 rounded">Điểm A</span>
+                            </div>
+                            <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-slate-900">CSC 222 - Object Oriented Prog</span>
+                                    <p class="text-slate-500">Spring 2026 • 4.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2 py-0.5 rounded">Điểm A</span>
+                            </div>
+                            <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-slate-900">MTH 266 - Linear Algebra</span>
+                                    <p class="text-slate-500">Summer 2026 • 3.0 CR</p>
+                                </div>
+                                <span class="bg-emerald-600 text-white font-bold px-2 py-0.5 rounded">Điểm A</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group 3: Physical / Life Science -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="bg-slate-50 px-4 py-3 font-bold text-sm text-slate-800 flex justify-between items-center border-b border-slate-200">
+                            <span><i class="fa-solid fa-flask text-emerald-600 mr-2"></i> Khoa Học Tự Nhiên Có Phòng Thí Nghiệm (Physical / Life Science w/ Lab)</span>
+                            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">Đã xong 4 / 8 CR</span>
+                        </div>
+                        <div class="p-4 space-y-3 text-xs">
+                            <div class="flex items-center justify-between p-3 bg-sky-50 rounded-lg border border-sky-200">
+                                <div>
+                                    <span class="font-bold text-slate-900 text-sm">Science Elective #1: CHM 111 - General Chemistry I</span>
+                                    <p class="text-slate-500">Term: Fall 2026 • 4.0 CR</p>
+                                </div>
+                                <span class="bg-sky-500 text-white font-bold px-2.5 py-1 rounded">In Progress (Đang học)</span>
+                            </div>
+
+                            <!-- NEEDED COURSE -->
+                            <div class="flex items-center justify-between p-3.5 bg-rose-50 rounded-lg border-2 border-dashed border-rose-300">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-exclamation"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-rose-900 text-sm">Science Elective #2 (CẦN LẤY)</span>
+                                        <p class="text-rose-700 mt-0.5">Yêu cầu: 4.0 CR • Chưa hoàn thành</p>
+                                        <p class="text-slate-500 text-[11px] mt-1">Các môn hợp lệ: CHM 112, PHY 241, PHY 242, BIO 101, BIO 102, GOL 105, GOL 106</p>
+                                    </div>
+                                </div>
+                                <span class="bg-rose-600 text-white font-bold px-3 py-1.5 rounded text-xs shadow-xs">
+                                    Còn Thiếu 4 CR
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group 4: Gen Ed Elective Needed -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="bg-slate-50 px-4 py-3 font-bold text-sm text-slate-800 flex justify-between items-center border-b border-slate-200">
+                            <span><i class="fa-solid fa-layer-group text-emerald-600 mr-2"></i> Môn Tự Chọn Giáo Dục Đại Cương (General Education Elective)</span>
+                            <span class="text-xs font-semibold text-rose-700 bg-rose-100 px-2 py-0.5 rounded">Cần bổ sung 3 CR</span>
+                        </div>
+                        <div class="p-4 text-xs">
+                            <div class="flex items-center justify-between p-3.5 bg-rose-50 rounded-lg border-2 border-dashed border-rose-300">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-exclamation"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-rose-900 text-sm">General Education Elective (CẦN LẤY)</span>
+                                        <p class="text-rose-700 mt-0.5">Yêu cầu: 3.0 CR để thế chỗ MTH 167 • Chưa đăng ký</p>
+                                        <p class="text-slate-500 text-[11px] mt-1">Khuyên dùng: Đăng ký <strong>CSC 223</strong> để tính đồng thời cho bằng Computer Science!</p>
+                                    </div>
+                                </div>
+                                <span class="bg-rose-600 text-white font-bold px-3 py-1.5 rounded text-xs shadow-xs">
+                                    Còn Thiếu 3 CR
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Computer Science Detail -->
+        <div id="tab-cs" class="tab-content hidden">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
+                <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 border-b border-slate-100 pb-4 mb-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">Chi Tiết Audit: Computer Science (A.S.)</h3>
+                        <p class="text-xs text-slate-500">Mã chương trình: 2460 • Yêu cầu: 60 Tín chỉ • Hạn hoàn thành: Summer 2032</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-semibold border border-blue-200">
+                            Đã đạt: 53 / 60 Tín chỉ
+                        </span>
+                        <span class="bg-rose-100 text-rose-800 text-xs px-3 py-1 rounded-full font-semibold border border-rose-200">
+                            Còn lại: 7 Tín chỉ
+                        </span>
+                    </div>
+                </div>
+
+                <!-- CS Requirements List -->
+                <div class="space-y-4">
+
+                    <!-- CS Core Section -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="bg-slate-50 px-4 py-3 font-bold text-sm text-slate-800 flex justify-between items-center border-b border-slate-200">
+                            <span><i class="fa-solid fa-code text-blue-600 mr-2"></i> Chuyên Ngành Khoa Học Máy Tính (Computer Science Core)</span>
+                            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">Còn thiếu 1 môn bắt buộc</span>
+                        </div>
+                        <div class="p-4 space-y-3 text-xs">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-slate-900">CSC 221 - Intro to Programming</span>
+                                        <p class="text-slate-500">Fall 2025 • 3.0 CR</p>
+                                    </div>
+                                    <span class="bg-emerald-600 text-white font-bold px-2 py-0.5 rounded">Điểm A</span>
+                                </div>
+                                <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-slate-900">CSC 222 - Object Oriented Programming</span>
+                                        <p class="text-slate-500">Spring 2026 • 4.0 CR</p>
+                                    </div>
+                                    <span class="bg-emerald-600 text-white font-bold px-2 py-0.5 rounded">Điểm A</span>
+                                </div>
+                            </div>
+
+                            <!-- CRITICAL MISSING CS COURSE -->
+                            <div class="flex items-center justify-between p-3.5 bg-rose-50 rounded-lg border-2 border-dashed border-rose-300">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold shrink-0">
+                                        <i class="fa-solid fa-code text-rose-700"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-rose-900 text-sm">CSC 223 - Data Structures and Analysis of Algorithms (CẦN LẤY)</span>
+                                        <p class="text-rose-700 mt-0.5">Yêu cầu: 4.0 CR • Môn chuyên ngành bắt buộc quan trọng nhất</p>
+                                        <p class="text-slate-500 text-[11px] text-slate-600">Môn học tiên quyết để chuyển tiếp ngành Computer Science ở đại học 4 năm.</p>
+                                    </div>
+                                </div>
+                                <span class="bg-rose-600 text-white font-bold px-3 py-1.5 rounded text-xs shadow-xs shrink-0">
+                                    Cần Học 4 CR
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CS Math & Science Requirements -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="bg-slate-50 px-4 py-3 font-bold text-sm text-slate-800 flex justify-between items-center border-b border-slate-200">
+                            <span><i class="fa-solid fa-microscope text-blue-600 mr-2"></i> Khoa Học & Toán Học Cho CS (Science & Math Requirements)</span>
+                            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">Cần 1 môn Science Lab</span>
+                        </div>
+                        <div class="p-4 space-y-3 text-xs">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-slate-900">MTH 263 - Calculus I</span>
+                                        <p class="text-slate-500">4.0 CR • Điểm A</p>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                                </div>
+                                <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-slate-900">MTH 264 - Calculus II</span>
+                                        <p class="text-slate-500">4.0 CR • Điểm A</p>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                                </div>
+                                <div class="p-2.5 bg-sky-50 rounded-lg border border-sky-200 flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-slate-900">MTH 265 - Calculus III</span>
+                                        <p class="text-slate-500">4.0 CR • Fall 2026</p>
+                                    </div>
+                                    <span class="bg-sky-500 text-white font-bold px-2 py-0.5 rounded text-[10px]">In Progress</span>
+                                </div>
+                                <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-slate-900">MTH 288 - Discrete Math</span>
+                                        <p class="text-slate-500">3.0 CR • Điểm A</p>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                                </div>
+                                <div class="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100 flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-slate-900">MTH 266 - Linear Algebra</span>
+                                        <p class="text-slate-500">3.0 CR • Điểm A</p>
+                                    </div>
+                                    <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                                </div>
+                                <div class="p-2.5 bg-sky-50 rounded-lg border border-sky-200 flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-slate-900">CHM 111 - General Chemistry I</span>
+                                        <p class="text-slate-500">4.0 CR • Fall 2026</p>
+                                    </div>
+                                    <span class="bg-sky-500 text-white font-bold px-2 py-0.5 rounded text-[10px]">In Progress</span>
+                                </div>
+                            </div>
+
+                            <!-- Science Requirement #2 -->
+                            <div class="flex items-center justify-between p-3.5 bg-rose-50 rounded-lg border-2 border-dashed border-rose-300">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-flask"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-rose-900 text-sm">Science Elective #2 (CẦN LẤY)</span>
+                                        <p class="text-rose-700 mt-0.5">Yêu cầu: 4.0 CR • Tổng Science cần 8 CR</p>
+                                        <p class="text-slate-500 text-[11px]">Danh sách gợi ý: CHM 112, PHY 241, PHY 242, BIO 101, BIO 102, GOL 105</p>
+                                    </div>
+                                </div>
+                                <span class="bg-rose-600 text-white font-bold px-3 py-1.5 rounded text-xs shadow-xs">
+                                    Cần Học 4 CR
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- General Education & Humanities -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <div class="bg-slate-50 px-4 py-3 font-bold text-sm text-slate-800 flex justify-between items-center border-b border-slate-200">
+                            <span><i class="fa-solid fa-landmark text-blue-600 mr-2"></i> Môn Đại Cương & Nhân Văn (Humanities & Social Sciences)</span>
+                            <span class="text-xs font-normal text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">100% Hoàn thành</span>
+                        </div>
+                        <div class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 text-xs">
+                            <div class="p-2 bg-slate-50 rounded border border-slate-200">
+                                <span class="font-bold text-slate-800 block">ENG 111 & 112</span>
+                                <span class="text-emerald-700 font-semibold">6 CR • Điểm A</span>
+                            </div>
+                            <div class="p-2 bg-slate-50 rounded border border-slate-200">
+                                <span class="font-bold text-slate-800 block">ART 100 & REL 100</span>
+                                <span class="text-emerald-700 font-semibold">6 CR • Điểm A</span>
+                            </div>
+                            <div class="p-2 bg-slate-50 rounded border border-slate-200">
+                                <span class="font-bold text-slate-800 block">HIS 101 & SOC 200</span>
+                                <span class="text-emerald-700 font-semibold">6 CR • Điểm A</span>
+                            </div>
+                            <div class="p-2 bg-slate-50 rounded border border-slate-200">
+                                <span class="font-bold text-slate-800 block">CST 100 & EGR 121</span>
+                                <span class="text-emerald-700 font-semibold">5 CR • Approved Elective</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Interactive Graduation Planner -->
+        <div id="tab-planner" class="tab-content hidden">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
+                <div class="border-b border-slate-100 pb-4 mb-6">
+                    <h3 class="text-lg font-bold text-slate-900"> Công Cụ Mô Phỏng Đăng Ký Môn Để Tốt Nghiệp</h3>
+                    <p class="text-xs text-slate-500">Tích chọn các môn bạn dự định đăng ký kỳ tiếp theo để xem tiến độ tự động nhảy lên 100%!</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Left: Interactive Checklist -->
+                    <div class="lg:col-span-2 space-y-4">
+                        <h4 class="font-bold text-slate-800 text-sm">Chọn môn bạn sẽ đăng ký ở Học kỳ Kế Tiếp (Spring 2027):</h4>
+
+                        <label class="flex items-start p-4 bg-slate-50 hover:bg-amber-50/60 border-2 border-slate-200 hover:border-amber-300 rounded-xl cursor-pointer transition">
+                            <input type="checkbox" id="chk-csc223" onchange="updateSimulation()" class="w-5 h-5 mt-1 text-emerald-600 rounded focus:ring-emerald-500">
+                            <div class="ml-3">
+                                <span class="font-bold text-slate-900 text-sm block">CSC 223 - Data Structures and Analysis of Algorithms</span>
+                                <p class="text-xs text-slate-600 mt-0.5">4 Tín chỉ • <strong>Đáp ứng:</strong> Môn bắt buộc ngành Computer Science + Tính làm Gen Ed Elective cho Math!</p>
+                                <span class="inline-block mt-1 text-[10px] font-bold bg-blue-100 text-blue-800 px-2 py-0.5 rounded">Khuyên dùng 100%</span>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start p-4 bg-slate-50 hover:bg-amber-50/60 border-2 border-slate-200 hover:border-amber-300 rounded-xl cursor-pointer transition">
+                            <input type="checkbox" id="chk-chm112" onchange="updateSimulation()" class="w-5 h-5 mt-1 text-emerald-600 rounded focus:ring-emerald-500">
+                            <div class="ml-3">
+                                <span class="font-bold text-slate-900 text-sm block">CHM 112 - General Chemistry II (hoặc PHY 241)</span>
+                                <p class="text-xs text-slate-600 mt-0.5">4 Tín chỉ • <strong>Đáp ứng:</strong> Môn Science Lab thứ 2 cho CẢ HAI ngành Science/Math & Computer Science!</p>
+                                <span class="inline-block mt-1 text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Khuyên dùng 100%</span>
+                            </div>
+                        </label>
+
+                        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800">
+                            <i class="fa-solid fa-circle-info text-emerald-600 mr-1.5"></i>
+                            <strong>Mẹo tiết kiệm học phí & thời gian:</strong> Việc chọn đúng 2 môn trên giúp bạn học ít hơn 1 môn so với học riêng lẻ, và ra trường cùng lúc với <strong>2 Bằng Bằng Bằng Tốt Nghiệp A.S.</strong>!
+                        </div>
+                    </div>
+
+                    <!-- Right: Dynamic Simulation Results Card -->
+                    <div class="bg-slate-900 text-white p-6 rounded-2xl flex flex-col justify-between shadow-lg">
+                        <div>
+                            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">Kết Quả Mô Phỏng</span>
+                            <h4 class="text-lg font-bold">Dự Báo Tốt Nghiệp</h4>
+                            <p class="text-xs text-slate-400 mt-1">Dựa trên lựa chọn môn ở cột bên trái</p>
+
+                            <div class="mt-6 space-y-4">
+                                <!-- Sci/Math Sim -->
+                                <div>
+                                    <div class="flex justify-between text-xs font-semibold mb-1">
+                                        <span class="text-slate-300">Science / Math:</span>
+                                        <span id="sim-math-percent" class="text-amber-400 font-bold">90.0%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                        <div id="sim-math-bar" class="bg-gradient-to-r from-amber-400 to-emerald-400 h-full transition-all duration-500" style="width: 90%"></div>
+                                    </div>
+                                    <span id="sim-math-status" class="text-[11px] text-slate-400 block mt-1">Còn thiếu 6 Tín chỉ</span>
+                                </div>
+
+                                <!-- CS Sim -->
+                                <div>
+                                    <div class="flex justify-between text-xs font-semibold mb-1">
+                                        <span class="text-slate-300">Computer Science:</span>
+                                        <span id="sim-cs-percent" class="text-amber-400 font-bold">88.3%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                        <div id="sim-cs-bar" class="bg-gradient-to-r from-amber-400 to-blue-400 h-full transition-all duration-500" style="width: 88.3%"></div>
+                                    </div>
+                                    <span id="sim-cs-status" class="text-[11px] text-slate-400 block mt-1">Còn thiếu 7 Tín chỉ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="sim-congratulations" class="mt-6 pt-4 border-t border-slate-800 hidden">
+                            <div class="bg-emerald-500/20 border border-emerald-500/50 p-3 rounded-xl text-center">
+                                <i class="fa-solid fa-trophy text-amber-300 text-xl mb-1"></i>
+                                <p class="text-xs font-bold text-emerald-300">ĐỦ ĐIỀU KIỆN TỐT NGHIỆP CẢ 2 BẰNG!</p>
+                                <p class="text-[10px] text-slate-300 mt-0.5">Dự kiến nhận 2 bằng A.S. vào Spring 2027</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: Full Course History -->
+        <div id="tab-history" class="tab-content hidden">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4 mb-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">Lịch Sử Học Tập Chi Tiết (Course History)</h3>
+                        <p class="text-xs text-slate-500">Toàn bộ các môn đã học và đang đăng ký tại NVCC</p>
+                    </div>
+                    <div class="relative w-full sm:w-64">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                        <input type="text" id="courseSearch" onkeyup="filterCourses()" placeholder="Tìm tên môn, mã môn..." class="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                </div>
+
+                <!-- Course History Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-slate-700">
+                        <thead class="bg-slate-50 text-slate-800 uppercase text-[10px] font-bold tracking-wider border-b border-slate-200">
+                            <tr>
+                                <th class="p-3">Học kỳ (Term)</th>
+                                <th class="p-3">Mã môn</th>
+                                <th class="p-3">Tên môn học (Course Title)</th>
+                                <th class="p-3">Tín chỉ</th>
+                                <th class="p-3">Điểm (Grade)</th>
+                                <th class="p-3">Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="courseTableBody" class="divide-y divide-slate-100">
+                            <!-- Items populated by JavaScript below -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Full Course Dataset extracted from NVCC Audit Transcript
+        const courseHistory = [
+            { term: '2024 Spring', code: 'ESL 31', name: 'Composition I', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
+            { term: '2024 Spring', code: 'ESL 32', name: 'Reading I', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
+            { term: '2024 Spring', code: 'ESL 33', name: 'Oral Communications I', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
+            { term: '2024 Fall', code: 'CST 100', name: 'Prin of Public Speaking', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2024 Fall', code: 'SDV 100', name: 'College Success Skills', credits: 1.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2024 Fall', code: 'ESL 41', name: 'Composition II', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
+            { term: '2024 Fall', code: 'ESL 42', name: 'Reading II', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
+            { term: '2025 Spring', code: 'ESL 51', name: 'Composition III', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
+            { term: '2025 Spring', code: 'ESL 52', name: 'Reading III', credits: 5.0, grade: 'S', type: 'EN', status: 'Completed' },
+            { term: '2025 Spring', code: 'MTH 263', name: 'Calculus I', credits: 4.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2025 Spring', code: 'ITE 152', name: 'Intro to Digital and Info', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2025 Summer', code: 'ENG 111', name: 'College Composition I', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2025 Summer', code: 'ESL 95', name: 'Topics In: ESL Advanced', credits: 3.0, grade: 'S', type: 'EN', status: 'Completed' },
+            { term: '2025 Summer', code: 'HIS 101', name: 'Western Civ Pre-1600 CE', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2025 Fall', code: 'CSC 221', name: 'Intro to Prob Solv and Progr', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2025 Fall', code: 'EGR 121', name: 'Foundations of Engineering', credits: 2.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2025 Fall', code: 'ART 100', name: 'Art Appreciation', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2025 Fall', code: 'HIS 102', name: 'Western Civ Post-1600 CE', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2026 Spring', code: 'CSC 222', name: 'Object Oriented Programming', credits: 4.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2026 Spring', code: 'MTH 288', name: 'Discrete Mathematics', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2026 Spring', code: 'MTH 264', name: 'Calculus II', credits: 4.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2026 Spring', code: 'REL 100', name: 'Intro to the Study of Religion', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2026 Summer', code: 'SOC 200', name: 'Introduction to Sociology', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2026 Summer', code: 'MTH 266', name: 'Linear Algebra', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2026 Summer', code: 'ENG 112', name: 'Coll Composition II', credits: 3.0, grade: 'A', type: 'EN', status: 'Completed' },
+            { term: '2026 Fall', code: 'CHM 111', name: 'General Chemistry I', credits: 4.0, grade: 'IP', type: 'IP', status: 'In Progress' },
+            { term: '2026 Fall', code: 'MTH 265', name: 'Calculus III', credits: 4.0, grade: 'IP', type: 'IP', status: 'In Progress' }
+        ];
+
+        // Populate Table Function
+        function renderCourseTable(courses) {
+            const tbody = document.getElementById('courseTableBody');
+            tbody.innerHTML = '';
+
+            courses.forEach(c => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50 transition';
+                
+                const isIP = c.grade === 'IP';
+                const gradeBadge = isIP 
+                    ? `<span class="bg-sky-100 text-sky-800 font-bold px-2 py-0.5 rounded text-[11px]">IP (In Progress)</span>`
+                    : `<span class="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded text-[11px]">${c.grade}</span>`;
+
+                tr.innerHTML = `
+                    <td class="p-3 font-medium text-slate-600">${c.term}</td>
+                    <td class="p-3 font-bold text-slate-900">${c.code}</td>
+                    <td class="p-3 text-slate-800 font-medium">${c.name}</td>
+                    <td class="p-3 text-slate-600">${c.credits.toFixed(1)} CR</td>
+                    <td class="p-3">${gradeBadge}</td>
+                    <td class="p-3 text-slate-500">${isIP ? '⏳ Fall 2026' : '✅ Satisfied'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Search Filter
+        function filterCourses() {
+            const query = document.getElementById('courseSearch').value.toLowerCase();
+            const filtered = courseHistory.filter(c => 
+                c.code.toLowerCase().includes(query) || 
+                c.name.toLowerCase().includes(query) ||
+                c.term.toLowerCase().includes(query)
+            );
+            renderCourseTable(filtered);
+        }
+
+        // Tab Switcher
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            if(tabId === 'tab-science') document.getElementById('btn-tab-science').classList.add('active');
+            if(tabId === 'tab-cs') document.getElementById('btn-tab-cs').classList.add('active');
+            if(tabId === 'tab-planner') document.getElementById('btn-tab-planner').classList.add('active');
+            if(tabId === 'tab-history') document.getElementById('btn-tab-history').classList.add('active');
+        }
+
+        // Interactive Planner Simulation
+        function updateSimulation() {
+            const csc223 = document.getElementById('chk-csc223').checked;
+            const chm112 = document.getElementById('chk-chm112').checked;
+
+            // Science Math base: 54 CR (90%)
+            let mathCredits = 54;
+            if(csc223) mathCredits += 3; // Fulfills Gen Ed Elective
+            if(chm112) mathCredits += 4; // Fulfills Science #2
+            let mathPercent = Math.min(100, (mathCredits / 60) * 100);
+
+            // Computer Science base: 53 CR (88.3%)
+            let csCredits = 53;
+            if(csc223) csCredits += 4; // Fulfills CSC 223 core
+            if(chm112) csCredits += 4; // Fulfills Science #2
+            let csPercent = Math.min(100, (csCredits / 60) * 100);
+
+            // UI Updates
+            document.getElementById('sim-math-percent').innerText = `${mathPercent.toFixed(1)}%`;
+            document.getElementById('sim-math-bar').style.width = `${mathPercent}%`;
+            document.getElementById('sim-math-status').innerText = mathPercent >= 100 ? '✅ Hoàn thành 100% (60/60 CR)' : `Đã đạt ${mathCredits}/60 CR (Còn thiếu ${60 - mathCredits} CR)`;
+
+            document.getElementById('sim-cs-percent').innerText = `${csPercent.toFixed(1)}%`;
+            document.getElementById('sim-cs-bar').style.width = `${csPercent}%`;
+            document.getElementById('sim-cs-status').innerText = csPercent >= 100 ? '✅ Hoàn thành 100% (60/60 CR)' : `Đã đạt ${csCredits}/60 CR (Còn thiếu ${60 - csCredits} CR)`;
+
+            const congrats = document.getElementById('sim-congratulations');
+            if(mathPercent >= 100 && csPercent >= 100) {
+                congrats.classList.remove('hidden');
+            } else {
+                congrats.classList.add('hidden');
+            }
+        }
+
+        // Initial Load
+        window.onload = function() {
+            renderCourseTable(courseHistory);
+        };
+    </script>
+</body>
+</html>
